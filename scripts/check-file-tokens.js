@@ -7,13 +7,8 @@ import { readFileSync } from "node:fs";
 const MAX_TOKENS = 5000;
 const BYTES_PER_TOKEN = 4;
 
-// Generated files that nobody edits by hand, and workflow files, which
-// GitHub reads as one file each and which cannot be split.
-const IGNORED = [
-  /(^|\/)package-lock\.json$/,
-  /^drizzle\//,
-  /^\.github\/workflows\/[^/]+\.yml$/,
-];
+// Generated files that nobody edits by hand.
+const IGNORED = [/(^|\/)package-lock\.json$/, /^drizzle\//];
 
 const isBinary = (contents) => contents.subarray(0, 8000).includes(0);
 

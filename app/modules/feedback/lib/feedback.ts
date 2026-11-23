@@ -59,8 +59,8 @@ export async function fileFeedbackIssue(deps: FeedbackDeps, form: FormData) {
     parsed.data.title,
     "--body",
     issueBody(parsed.data),
-    // The label starts agent-explore.yml. It only starts a workflow because
-    // `gh` runs as you, not as GITHUB_TOKEN.
+    // The software factory's poller picks up issues with this label and
+    // explores them.
     "--label",
     "agent:explore",
   ]);

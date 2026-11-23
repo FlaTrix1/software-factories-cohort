@@ -86,21 +86,22 @@ You don't need these yet, but you'll be asked for them along the way. Both have 
 
 ## Scripts
 
-| Command                      | Description                                  |
-| ---------------------------- | -------------------------------------------- |
-| `npm run dev`                | Start the development server                 |
-| `npm run build`              | Build for production                         |
-| `npm run test`               | Run tests with Vitest                        |
-| `npm run test:watch`         | Run tests in watch mode                      |
-| `npm run test:mutation`      | Mutation testing (Stryker) on changed lines  |
-| `npm run lint:oxlint`        | Lint the repository with oxlint              |
-| `npm run typecheck`          | Type-check the project                       |
-| `npm run db:generate`        | Generate a migration from the schema         |
-| `npm run db:migrate`         | Run database migrations                      |
-| `npm run db:seed`            | Reseed the database (drops and recreates it) |
-| `npm run reset <slug>`       | Reset your repo to a lesson checkpoint       |
-| `npm run cherry-pick <slug>` | Cherry-pick a lesson's solution              |
-| `npm run pull`               | Merge the course repo's latest `main` in     |
+| Command                      | Description                                                          |
+| ---------------------------- | -------------------------------------------------------------------- |
+| `npm run dev`                | Start the development server                                         |
+| `npm run build`              | Build for production                                                 |
+| `npm run test`               | Run tests with Vitest                                                |
+| `npm run test:watch`         | Run tests in watch mode                                              |
+| `npm run check`              | Format check, oxlint, typecheck, boundaries, module-test lint, tests |
+| `npm run test:mutation`      | Mutation testing (Stryker) on changed lines                          |
+| `npm run lint:oxlint`        | Lint the repository with oxlint                                      |
+| `npm run typecheck`          | Type-check the project                                               |
+| `npm run db:generate`        | Generate a migration from the schema                                 |
+| `npm run db:migrate`         | Run database migrations                                              |
+| `npm run db:seed`            | Reseed the database (drops and recreates it)                         |
+| `npm run reset <slug>`       | Reset your repo to a lesson checkpoint                               |
+| `npm run cherry-pick <slug>` | Cherry-pick a lesson's solution                                      |
+| `npm run pull`               | Merge the course repo's latest `main` in                             |
 
 ## Course Structure
 

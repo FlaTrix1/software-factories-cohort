@@ -102,6 +102,24 @@ You don't need these yet, but you'll be asked for them along the way. Both have 
 | `npm run cherry-pick <slug>` | Cherry-pick a lesson's solution              |
 | `npm run pull`               | Merge the course repo's latest `main` in     |
 
+## Using the factory
+
+Put a label on an issue or a pull request to start a factory task:
+
+| Label                  | Goes on      | Starts                                                                                   |
+| ---------------------- | ------------ | ---------------------------------------------------------------------------------------- |
+| `agent:explore`        | Issue        | An explore run, which reads the code and posts its findings as a comment on the issue    |
+| `agent:implement`      | Issue        | An implement run, which builds the ticket on a branch and opens a pull request           |
+| `agent:review`         | Pull request | A review run, which reviews the pull request against the coding standards and its ticket |
+| `agent:implement-spec` | Issue        | An implement-spec run, which builds every ticket of the spec on one integration branch   |
+
+The factory polls every 5 minutes, so a run starts within about 5 minutes of labelling.
+
+While a run works, the factory marks the issue or pull request with a status label:
+
+- `agent:in-progress`: a run has picked it up and is working on it.
+- `agent:blocked`: the run could not finish. It comes with a comment linking the Trigger.dev run, so you can see what went wrong.
+
 ## Course Structure
 
 The course works through this codebase in eight sections:

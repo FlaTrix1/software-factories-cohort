@@ -139,6 +139,20 @@ npm run db:seed     # if the seed data changed
 
 Your `.env` is gitignored, so it survives a reset.
 
+## Factory setup
+
+The factory lives in [`FlaTrix1/software-factory`](https://github.com/FlaTrix1/software-factory) and deploys to a Trigger.dev project.
+
+The Trigger.dev project's **Prod** environment needs these environment variables. Store `FACTORY_PAT` and `CLAUDE_CODE_OAUTH_TOKEN` as secrets.
+
+| Variable                  | Secret | Holds                                  |
+| ------------------------- | ------ | -------------------------------------- |
+| `FACTORY_PAT`             | Yes    | The GitHub token the factory acts with |
+| `CLAUDE_CODE_OAUTH_TOKEN` | Yes    | The token Claude Code runs with        |
+| `FACTORY_REPOS`           | No     | The repos the factory works on         |
+
+This repo's `.factory.json` lists the setup commands each run executes after `npm ci`, such as migrating and seeding the database.
+
 ## Troubleshooting
 
 ### "Could not locate the bindings file"

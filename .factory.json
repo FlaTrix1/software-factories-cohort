@@ -1,0 +1,9 @@
+{
+  "setup": [
+    "[ \"$(git config core.hooksPath)\" = .husky/_ ] || { echo 'The pre-commit hook is not installed: core.hooksPath is not .husky/_' >&2; exit 1; }",
+    "npm install -g agent-browser@0.27.0",
+    "agent-browser install",
+    "npm run db:migrate",
+    "npm run db:seed"
+  ]
+}

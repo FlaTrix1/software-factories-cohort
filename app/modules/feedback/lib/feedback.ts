@@ -7,6 +7,8 @@ export type RunCommand = (command: string, args: string[]) => Promise<string>;
 
 export type FeedbackDeps = { isDev: boolean; run: RunCommand };
 
+const ASK_FACTORY_TO_EXPLORE = "agent:explore";
+
 const feedbackSchema = z.object({
   title: z.string().trim().min(1, "Give the feedback a title."),
   description: z.string().trim().min(1, "Say what happened."),
@@ -59,10 +61,8 @@ export async function fileFeedbackIssue(deps: FeedbackDeps, form: FormData) {
     parsed.data.title,
     "--body",
     issueBody(parsed.data),
-    // The software factory's poller picks up issues with this label and
-    // explores them.
     "--label",
-    "agent:explore",
+    ASK_FACTORY_TO_EXPLORE,
   ]);
 
   return { issueUrl: stdout.trim() };
